@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Digital Clock</title>
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+    
+    function startTime() {
+       var today = new Date();
+       var h = today.getHours();
+       var m = today.getMinutes();
+       var s = today.getSeconds();
+   
+       m =checkTime(m);
+       s= checkTime(s);
+       document.getElementById('clock').innerHTML = h + ":" + m +":"+ s;
+   
+       var t = setTimeout(startTime, 1000);  // 500 ? 区别？1000
+   
+    }
+   
+    function checkTime(i){   // 差了个 i; 2023-03-19T02:24AM
+       if (i<10) { i = "0"+ i};  // "0+i"  error! 👍
+       return i;
+    }
+</script>
+
+<style>
+    body {
+        background: black;
+
+    }
+    #clock{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #17d4fe;
+        //font-family: Orbitron;
+        letter-spacing: 7px;
+        font-weight: bold;
+        font-size:30em;   //字体大小
+    }
+</style>
+
+
+</head>
+
+<body onload="startTime()";>
+    <!--Hello  -->  
+
+    <div id ="clock"></div>
+
+</body>
+</html>
