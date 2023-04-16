@@ -14,8 +14,10 @@
    
        m =checkTime(m);
        s= checkTime(s);
+       h= checkTime(h); // 2023-04-10 12:40am
+
        document.getElementById('clock').innerHTML = h + ":" + m +":"+ s;
-   
+
        var t = setTimeout(startTime, 1000);  // 500 ? 区别？1000
    
     }
@@ -40,7 +42,7 @@
         //font-family: Orbitron;
         letter-spacing: 7px;
         font-weight: bold;
-        font-size:30em;   //字体大小
+        font-size:20em;   //字体大小
     }
 </style>
 
